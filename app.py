@@ -99,7 +99,7 @@ def upload_image():
         
         frame = face_rec.load_image_file('static/uploads/'+filename)
 
-        frame = img_to_array(frame)
+        #frame = img_to_array(frame)
 
 
         facesInFrame = face_rec.face_locations(frame)
