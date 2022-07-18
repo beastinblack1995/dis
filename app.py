@@ -91,9 +91,11 @@ def home():
 @app.route('/', methods=['POST'])
 def upload_image():
     files = glob.glob('/static/uploads/*')
+    print(files)
     if len(files) >0:
-     for f in files:
-         os.remove(f)
+      for f in files:
+          os.remove(f)
+    print(glob.glob('/static/uploads/*'))   
     if 'file' not in request.files:
         flash('No file part')
         return redirect(request.url)
@@ -169,7 +171,7 @@ def upload_image():
         
         #print('upload_image filename: ' + filename)
         flash('Image successfully uploaded and displayed below')
-        print(filename)
+        
         return render_template('index.html', filename=  filename)
     else:
         flash('Allowed image types are - png, jpg, jpeg, gif')
