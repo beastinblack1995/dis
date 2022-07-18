@@ -94,8 +94,9 @@ def upload_image():
     if file and allowed_file(file.filename):
         filename = secure_filename(file.filename)
         file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-        frame = cv2.imread('static/uploads/' + filename)
-        gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+        
+        
+        
         frame = face_rec.load_image_file('static/uploads/'+filename)
 
         frame = img_to_array(frame)
