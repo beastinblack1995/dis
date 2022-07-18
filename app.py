@@ -48,7 +48,7 @@ def resize(img, size) :
 def findEncoding(images) :
     imgEncodings = []
     for img in images :
-        img = resize(img, 0.50)
+        #img = resize(img, 0.50)
         img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
         encodeimg = face_rec.face_encodings(img)[0]
         imgEncodings.append(encodeimg)
