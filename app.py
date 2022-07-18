@@ -147,7 +147,7 @@ def upload_image():
         
         
         
-        print(image)
+        
         
         #print('upload_image filename: ' + filename)
         flash('Image successfully uploaded and displayed below')
