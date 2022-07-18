@@ -98,7 +98,7 @@ def upload_image():
         
         
         frame = face_rec.load_image_file('static/uploads/'+filename)
-        frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+        frame = cv2.cvtColor(frame, cv2.COLOR_RGB2BGR)
 
         #frame = img_to_array(frame)
 
