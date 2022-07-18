@@ -22,6 +22,8 @@ import base64
 from werkzeug.utils import secure_filename
 
 import os
+import glob
+
 path = 'employee images'
 employeeImg = []
 employeeName = []
@@ -72,6 +74,11 @@ for cl in myList :
 
 EncodeList = findEncoding(employeeImg)
 
+
+import glob
+
+
+
  
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
@@ -83,6 +90,10 @@ def home():
  
 @app.route('/', methods=['POST'])
 def upload_image():
+    files = glob.glob('/static/uploads/*')
+    if len(files) >0:
+     for f in files:
+         os.remove(f)
     if 'file' not in request.files:
         flash('No file part')
         return redirect(request.url)
