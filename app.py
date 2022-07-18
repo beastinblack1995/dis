@@ -9,7 +9,7 @@ from flask import Flask, render_template, Response
 import cv2
 import cv2
 import numpy as np
-#import face_recognition as face_rec
+import face_recognition as face_rec
 from base64 import b64encode
 import io
 from PIL import Image  
